@@ -16,7 +16,7 @@
     </div>
     
     <div class="d-flex justify-content-end gap-2">
-        <a href="index.html" class="btn btn-secondary">Cancel</a>
+        <a href="index.php" class="btn btn-secondary">Cancel</a>
         <button type="submit" class="btn btn-success">Add Student</button>
     </div>
   </form>

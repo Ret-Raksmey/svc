@@ -7,7 +7,8 @@
           <th>ID</th>
           <th>Name</th>
           <th>Gender</th>
-          <th>Actions</th>
+          <th>Telephone</th>
+          <th class="text-center">Actions</th>
         </tr>
       </thead>
       <tbody>
@@ -15,7 +16,8 @@
           <td>1</td>
           <td>Alice Smith</td>
           <td>Female</td>
-          <td>
+          <td>01230321</td>
+          <td class="text-center">
             <a href="index.php?page=edit" class="btn btn-sm btn-warning">Edit</a>
             <a href="#" class="btn btn-sm btn-danger">Delete</a>
           </td>
@@ -24,7 +26,8 @@
           <td>2</td>
           <td>John Doe</td>
           <td>Male</td>
-          <td>
+          <td>01230321</td>
+          <td class="text-center" >
             <a href="index.php?page=edit" class="btn btn-sm btn-warning">Edit</a>
             <a href="#" class="btn btn-sm btn-danger">Delete</a>
           </td>
@@ -33,7 +36,8 @@
           <td>3</td>
           <td>Linda Johnson</td>
           <td>Female</td>
-          <td>
+          <td>01230321</td>
+          <td class="text-center">
             <a href="index.php?page=edit" class="btn btn-sm btn-warning">Edit</a>
             <a href="#" class="btn btn-sm btn-danger">Delete</a>
           </td>
