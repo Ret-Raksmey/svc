@@ -3,9 +3,9 @@
     require_once 'app/controllers/StudentControllers.php';
     require_once 'config/database.php';
 
-        if(Database::connection()){
-            echo "✅Connected";
-        }
+    // if(Database::connection()){
+    //     echo "✅Connected";
+    // }
 
     $controller = new StudentControllers();
     $page = $_GET['page'] ?? 'index';
