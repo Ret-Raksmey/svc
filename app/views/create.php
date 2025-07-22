@@ -13,7 +13,7 @@
                 <option value="Female">Female</option>
             </select>
         </div>
-         <div class="mb-3 col-4">
+        <div class="mb-3 col-4">
             <label class="form-label">Telephone</label>
             <input type="text" name="tel" class="form-control" placeholder="Enter Telephone" required>
         </div>

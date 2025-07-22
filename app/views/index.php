@@ -12,35 +12,32 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>1</td>
-          <td>Alice Smith</td>
-          <td>Female</td>
-          <td>01230321</td>
-          <td class="text-center">
-            <a href="index.php?page=edit" class="btn btn-sm btn-warning">Edit</a>
-            <a href="#" class="btn btn-sm btn-danger">Delete</a>
-          </td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>John Doe</td>
-          <td>Male</td>
-          <td>01230321</td>
-          <td class="text-center" >
-            <a href="index.php?page=edit" class="btn btn-sm btn-warning">Edit</a>
-            <a href="#" class="btn btn-sm btn-danger">Delete</a>
-          </td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td>Linda Johnson</td>
-          <td>Female</td>
-          <td>01230321</td>
-          <td class="text-center">
-            <a href="index.php?page=edit" class="btn btn-sm btn-warning">Edit</a>
-            <a href="#" class="btn btn-sm btn-danger">Delete</a>
-          </td>
-        </tr>
+        <?php
+            if(isset($students) && !empty($students)){
+                foreach($students as $s){
+                  $id = $s['id'];
+                  $name = $s['name'];
+                  $gender = $s['gender'];
+                  $tel = $s['tel'];
+                        
+                  echo <<<html
+                    <tr>
+                      <td>$id</td>
+                      <td>$name</td>
+                      <td>$gender</td>
+                      <td>$tel</td>
+                      <td class="text-center">
+                        <a href="index.php?page=edit&id=$id" class="btn btn-sm btn-warning">Edit</a>
+                        <a href="index.php?page=destroy&id=$id" 
+                          class="btn btn-sm btn-danger"
+                          onclick="return confirm('Are you sure you want to delete this student?');">Delete</a>
+                      </td>
+                    </tr>
+                  html;
+                }
+            } else {
+                echo '<tr><td colspan="5" class="text-center text-muted">No students found. <a href="index.php?page=create">Add the first student</a></td></tr>';
+            }
+        ?>
       </tbody>
 </table>
