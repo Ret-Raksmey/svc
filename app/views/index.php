@@ -4,6 +4,7 @@
 <table class="table table-bordered table-hover">
       <thead class="table-dark">
         <tr>
+          <th class="text-center">N<sup>o</sup></th>
           <th>ID</th>
           <th>Name</th>
           <th>Gender</th>
@@ -14,6 +15,7 @@
       <tbody>
         <?php
             if(isset($students) && !empty($students)){
+              $no = 1;
                 foreach($students as $s){
                   $id = $s['id'];
                   $name = $s['name'];
@@ -22,7 +24,8 @@
                         
                   echo <<<html
                     <tr>
-                      <td>$id</td>
+                      <td class="text-center">$no</td>
+                      <td>USER- ID :$id</td>
                       <td>$name</td>
                       <td>$gender</td>
                       <td>$tel</td>
@@ -34,9 +37,10 @@
                       </td>
                     </tr>
                   html;
+                  $no++; // ✅ Move this INSIDE the foreach loop
                 }
             } else {
-                echo '<tr><td colspan="5" class="text-center text-muted">No students found. <a href="index.php?page=create">Add the first student</a></td></tr>';
+                echo '<tr><td colspan="6" class="text-center text-muted">No students found. <a href="index.php?page=create">Add the first student</a></td></tr>';
             }
         ?>
       </tbody>

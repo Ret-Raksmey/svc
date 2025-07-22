@@ -38,9 +38,22 @@
         }
 
         public function update($id){
-            $title = 'Update Student';
-            $views = 'app/views/edit.php';
-            include 'app/views/layout.php';
+            if($_SERVER['REQUEST_METHOD'] === 'POST'){
+                // Handle form submission for updating
+                $name = $_POST['name'];
+                $gender = $_POST['gender'];
+                $tel = $_POST['tel'];
+
+                $result = $this->model->update($id, $name, $gender, $tel);
+
+                header("Location: index.php");
+            } else {
+                // Show the edit form with existing data
+                $students = $this->model->getById($id);
+                $title = 'Update Student';
+                $views = 'app/views/edit.php';
+                include 'app/views/layout.php';
+            }
         }
 
         public function destroy($id){
